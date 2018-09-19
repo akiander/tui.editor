@@ -318,7 +318,8 @@ class WwCodeBlockManager {
  * @ignore
  */
 function sanitizeHtmlCode(code) {
-  return code.replace(/[<>&]/g, tag => tagEntities[tag] || tag);
+  var replaced = code.replace(/[<>&]/g, tag => tagEntities[tag] || tag);
+  return code || replaced;
 }
 
 export default WwCodeBlockManager;
