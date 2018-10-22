@@ -94,6 +94,8 @@ class Convertor {
     let renderedHTML = markdownitHighlight.render(markdown);
     renderedHTML = this._removeBrToMarkPassAttributeInCode(renderedHTML);
 
+    renderedHTML = renderedHTML.replace(/&lt;(span class=['"]hl hl-1['"])&gt;(.*)&lt;(\/span)&gt;/g, '<$1>$2<$3>');
+
     return renderedHTML;
   }
 
@@ -115,6 +117,8 @@ class Convertor {
 
     let renderedHTML = markdownit.render(markdown);
     renderedHTML = this._removeBrToMarkPassAttributeInCode(renderedHTML);
+
+    renderedHTML = renderedHTML.replace(/&lt;(span class=['"]hl hl-1['"])&gt;(.*)&lt;(\/span)&gt;/g, '<$1>$2<$3>');
 
     return renderedHTML;
   }
