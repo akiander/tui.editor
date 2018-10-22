@@ -191,7 +191,7 @@ class WwCodeBlockManager {
       }
 
       $pre.find('br').replaceWith('\n');
-      textLines = $pre.text().replace(/\s+$/, '').split(/\n/g);
+      textLines = $pre.html().replace(/\s+$/, '').replace(/<code>/, '').replace(/<\/code>/, '').split(/\n/g);
 
       if (lang) {
         $pre.attr('data-language', lang);
