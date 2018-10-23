@@ -148,9 +148,10 @@ class WwCodeBlockManager {
    */
   _mergeCodeblockEachlinesFromHTMLText(html) {
     html = html.replace(/<pre( .*?)?>(.*?)<\/pre>/g, (match, codeAttr, code) => {
-      code = code.replace(/<br\s*\/?>/g, '\n');
+      // code = code.replace(/<br\s*\/?>/g, '\n');
       code = code.replace(/<div ?(.*?)>/g, '');
       code = code.replace(/\n$/, '');
+      code = code.trim();
 
       return `<pre><code${(codeAttr || '')}>${code}</code></pre>`;
     });

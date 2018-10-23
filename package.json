@@ -1,6 +1,6 @@
 {
   "name": "tui-editor-alternate",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Alternate version of GFM Markdown Wysiwyg Editor.",
   "keywords": [
     "toast",
